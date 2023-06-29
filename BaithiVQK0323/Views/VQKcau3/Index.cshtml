@@ -1,0 +1,47 @@
+@model IEnumerable<BaithiVQK0323.Models.VQKcau3>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Trang chủ </h1>
+
+<p>
+    <a asp-action="Create">Tạo mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.hoten)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gioitinh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.diachi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.hoten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gioitinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diachi)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.hoten">Sửa</a> |
+                <a asp-action="Details" asp-route-id="@item.hoten">Chi tiết</a> |
+                <a asp-action="Delete" asp-route-id="@item.hoten">xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
